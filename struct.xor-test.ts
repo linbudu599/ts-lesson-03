@@ -8,12 +8,14 @@ interface CommonUser {
   promotionUsed: boolean;
 }
 
+interface Admin {}
+
 type User = VIP | CommonUser;
 
 type XORUser = XOR<VIP, CommonUser>;
 
 const u1: XORUser = {
-  vipExpires: 0,
+  promotionUsed: true,
 };
 
 const u2: XORUser = {};

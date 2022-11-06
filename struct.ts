@@ -8,4 +8,8 @@ type Record<K extends keyof any, T> = {
   [P in K]: T;
 };
 
+type Dictionary<T = unknown> = Record<string, T>;
+
+type NumbericDictionary<T> = Record<number, T>;
+
 export {};

@@ -22,4 +22,8 @@ type InstanceType<T extends ClassType> = T extends abstract new (
   ? R
   : any;
 
+type PromiseValue<T> = T extends Promise<infer R> ? R : T;
+
+type RecordIndexType<T> = T extends Record<infer R, unknown> ? R : T;
+
 export {};
