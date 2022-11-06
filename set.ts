@@ -1,11 +1,7 @@
-// 并集
-export type Concurrence<A, B> = A | B;
+type Extract<T, U> = T extends U ? T : never;
 
-// 交集
-export type Intersection<A, B> = A extends B ? A : never;
+type Exclude<T, U> = T extends U ? never : T;
 
-// 差集
-export type Difference<A, B> = A extends B ? never : A;
+type NonNullable<T> = T extends null | undefined ? never : T;
 
-// 补集
-export type Complement<A, B extends A> = Difference<A, B>;
+export {};

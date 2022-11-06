@@ -1,7 +1,11 @@
-type Extract<T, U> = T extends U ? T : never;
+type Pick<T, K extends keyof T> = {
+  [P in K]: T[P];
+};
 
-type Exclude<T, U> = T extends U ? never : T;
+type Omit<T, K extends keyof any> = Pick<T, Exclude<keyof T, K>>;
 
-type NonNullable<T> = T extends null | undefined ? never : T;
+type Record<K extends keyof any, T> = {
+  [P in K]: T;
+};
 
 export {};

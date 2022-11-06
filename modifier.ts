@@ -1,5 +1,5 @@
 type Partial<T> = {
-  [P in keyof T]?: T[P];
+  [P in keyof T]+?: T[P];
 };
 
 type Required<T> = {
@@ -7,7 +7,7 @@ type Required<T> = {
 };
 
 type Readonly<T> = {
-  readonly [P in keyof T]: T[P];
+  +readonly [P in keyof T]: T[P];
 };
 
 type Mutable<T> = {
